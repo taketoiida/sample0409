@@ -18,7 +18,13 @@ public class StreamSample {
         System.out.println("■Stream forEachによる取得：");
         places.stream().forEach(place -> System.out.println(place));
         
-        System.out.println("■「ン」で終わる場所のみ抽出：");
+        System.out.println("■「E」で終わる場所のみ抽出：");
+        places.stream()
+            .filter(place -> place.endsWith("E"))
+            .forEach(place -> System.out.println(place));
+        
+        
+        System.out.println("■各場所名の長さを表示：");
         places.stream()
             .map(place -> place + " の長さ: " + place.length())
             .forEach(place -> System.out.println(place));
